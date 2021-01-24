@@ -3,10 +3,13 @@ from django.db import models
 
 class BotUsers(models.Model):
     user_id = models.IntegerField(verbose_name='vk_id пользователя')
+    name = models.CharField(max_length=50, verbose_name='Имя пользователя')
+    surname = models.CharField(max_length=50, verbose_name='Фамилия пользователя')
     group_name = models.CharField(max_length=40, verbose_name='Название группы')
 
     class Meta:
         db_table = 'bot_users'
+        ordering = ['id']
 
 
 class BotSchedulePictures(models.Model):
@@ -25,4 +28,5 @@ class BotScheduleUlSTU(models.Model):
 
     class Meta:
         db_table = 'bot_schedule_text'
+        ordering = ['id']
 
