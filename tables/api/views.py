@@ -3,13 +3,13 @@ from .serializers import BotUsersSerializers, BotSchedulePicturesSerializers, Bo
 from ..models import BotUsers, BotSchedulePictures, BotScheduleUlSTU
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from rest_framework import permissions
+# from rest_framework import permissions
 
 
 class TableUsersView(viewsets.ModelViewSet):
     queryset = BotUsers.objects.all()
     serializer_class = BotUsersSerializers
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
     @action(detail=False, methods=['get'])
     def get_ids(self, request):
@@ -41,10 +41,10 @@ class TableUsersView(viewsets.ModelViewSet):
 class TableSchedulePictureView(viewsets.ModelViewSet):
     queryset = BotSchedulePictures.objects.all()
     serializer_class = BotSchedulePicturesSerializers
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 
 class TableScheduleDaysView(viewsets.ModelViewSet):
     queryset = BotScheduleUlSTU.objects.all()
     serializer_class = BotScheduleUlSTUSerializers
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
